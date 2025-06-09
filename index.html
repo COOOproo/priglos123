@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta 1
+charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Свадьба Натали и Андрея</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans&display=swap');
+
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      background: linear-gradient(to bottom, #fff7f3, #ffe5e0);
+      overflow-x: hidden;
+      animation: fadeIn 2s ease-in;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3em;
+      color: #b94747;
+      margin-bottom: 0.2em;
+      animation: fadeInDown 1.2s ease-in;
+    }
+
+    h2 {
+      font-weight: normal;
+      color: #555;
+      font-size: 1.3em;
+      margin-bottom: 30px;
+      animation: fadeInUp 1.2s ease-in;
+    }
+
+    .details {
+      font-size: 1.1em;
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 1em;
+    }
+
+    .drink-section {
+      text-align: left;
+      margin-top: 20px;
+    }
+
+    .drink-section label {
+      display: block;
+      margin: 8px 0;
+    }
+
+    button {
+      padding: 12px 24px;
+      background-color: #b94747;
+      color: white;
+      font-size: 1em;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #973333;
+    }
+
+    .thanks {
+      margin-top: 20px;
+      display: none;
+      color: green;
+      font-weight: bold;
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Натали & Андрей</h1>
+    <h2>приглашают вас на свадьбу</h2>
+
+    <div class="details">
+      📅 <strong>29 августа 2025</strong><br />
+      🕒 Начало в 15:00<br />
+      📍 Загс Владивотсока ул.Шкипера Гекка 15
+    </div>
+
+    <form id="inviteForm" action="https://formspree.io/f/xanjejyg" method="POST" onsubmit="return handleSubmit()">
+      <label for="name">Ваше имя:</label>
+      <input type="text" name="Имя гостя" id="name" required>
+
+      <label for="relation">Кто вы нам? (мама, друг и т.д.):</label>
+      <input type="text" name="Родство" id="relation" required>
+
+      <div class="drink-section">
+        <strong>Что предпочитаете из напитков?</strong>
+        <label><input type="checkbox" name="Напитки" value="Виски"> Виски</label>
+        <label><input type="checkbox" name="Напитки" value="Водка"> Водка</label>
+        <label><input type="checkbox" name="Напитки" value="Вино"> Вино</label>
+        <label><input type="checkbox" name="Напитки" value="Шампанское"> Шампанское</label>
+        <label><input type="checkbox" name="Напитки" value="Текила"> Текила</label>
+      </div>
+
+      <input type="hidden" name="_replyto" value="prostocool18@gmail.com">
+      <input type="hidden" name="_subject" value="Ответ на свадебное приглашение">
+
+      <button type="submit">Подтвердить участие</button>
+    </form>
+
+    <div class="thanks" id="thanksMessage">
+      Спасибо! Мы с нетерпением ждём встречи 😍
+    </div>
+  </div>
+
+  <script>
+    function handleSubmit() {
+      document.getElementById("thanksMessage").style.display = "block";
+      return true;
+    }
+  </script>
+</body>
+</html>
